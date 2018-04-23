@@ -3,7 +3,14 @@
     // 기존 특성에 대한 설명을 보려면 가리킵니다.
     // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
     "version": "0.2.0",
+    "debugServer" : 41912,
     "configurations": [
+        {
+            "name" : " MoonSharp Attach",
+            "type" : "moonsharp-debug",
+            "request" : "attach",
+            "HELP" : " 이 json의 'version'필드 바로 뒤에 'debugServer':41912(또는 연결하려는 모든 포트 ) 를 설정하십시오. "
+        },
         {
             "name": "Unity Editor",
             "type": "unity",

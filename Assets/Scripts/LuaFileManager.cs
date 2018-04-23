@@ -6,6 +6,8 @@ using AssetBundles;
 
 using MoonSharp.Interpreter;
 
+using System.IO;
+
 public class LuaFileInfo
 {
 	public DynValue className = null;      // 불러올 클래스 이름
@@ -47,6 +49,39 @@ public class LuaFileManager : MonoSingleton<LuaFileManager>
         }
         ㄴ*/
         //MoonSharpScript.Instance.OnPromotionManagerInit();
+    }
+
+    public LuaFileInfo SingleGetInfo(string bundleName, string className)
+    {
+        string path = Application.dataPath + "/Resources/Scripts/LuaTest2.lua";
+
+        //string luaCode = File.ReadAllText(Path.Combine(path, "LuaTest2.Lua"));
+        //Script script = new Script();
+        //script.DoString(luaCode);
+        //this.script = script;
+
+        string scriptData = File.ReadAllText(path);
+
+        //DynValue table = Script.RunString(scriptData);
+        script.DoString(scriptData);
+
+        LuaFileInfo info = new LuaFileInfo();
+        info.className = script.Globals.Get(className);
+
+         DynValue newFunction = info.className.Table.Get("new");
+        if (newFunction.IsNotNil())
+        {
+            info.classInst = script.Call(newFunction, info.className);
+        }
+        else
+        {
+            Debug.LogError(className + "new not found");
+            return null;
+        }
+
+        return info;
+		
+        //print(LuaFileManager.Instance.script.DoFile(path));
     }
 
 	public LuaFileInfo GetInfo(string bundleName, string className)

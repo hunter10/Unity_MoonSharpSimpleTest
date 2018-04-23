@@ -2,7 +2,8 @@
 	"files.associations":
 	{
 		"*.bjs":"javascript",
-		"*.javascript":"javascript"
+		"*.javascript":"javascript",
+		"*.txt":"javascript"
 	},
 	"files.exclude":
 	{
@@ -66,7 +67,8 @@
 		"library/":true,
 		"obj/":true,
 		"Obj/":true,
-		"ProjectSettings/":true,		"temp/":true,
+		"ProjectSettings/":true,
+		"temp/":true,
 		"Temp/":true
 	}
 }
