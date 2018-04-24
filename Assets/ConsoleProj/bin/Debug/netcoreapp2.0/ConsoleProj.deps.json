@@ -1,0 +1,54 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "1b0e37cbb8bc24769a1e6748387b85a5e6b45be1"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "ConsoleProj/1.0.0": {
+        "dependencies": {
+          "MoonSharp": "2.0.0",
+          "MoonSharp.Debugger.VsCode": "2.0.0"
+        },
+        "runtime": {
+          "ConsoleProj.dll": {}
+        }
+      },
+      "MoonSharp/2.0.0": {
+        "runtime": {
+          "lib/netstandard1.6/MoonSharp.Interpreter.dll": {}
+        }
+      },
+      "MoonSharp.Debugger.VsCode/2.0.0": {
+        "dependencies": {
+          "MoonSharp": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/MoonSharp.VsCodeDebugger.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleProj/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MoonSharp/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uiAcRh7d+53k3xW9pFDJfAFVw4RnjHVCJG05M3oPAVEVwPtFavhg1H/IpC6So4X1j9kJlzuLlA3OghhPcIvc5A==",
+      "path": "moonsharp/2.0.0",
+      "hashPath": "moonsharp.2.0.0.nupkg.sha512"
+    },
+    "MoonSharp.Debugger.VsCode/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ALLTmbkzKidTuJhHO2G9BF0N/S2LGYuvUX1U+PWDxUFWHo/0noBfXfR9gWzjH8J+2Wg5mqeC7oKTkgOTx2e1GQ==",
+      "path": "moonsharp.debugger.vscode/2.0.0",
+      "hashPath": "moonsharp.debugger.vscode.2.0.0.nupkg.sha512"
+    }
+  }
+}

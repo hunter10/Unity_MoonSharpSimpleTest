@@ -7,12 +7,15 @@ using MoonSharp.VsCodeDebugger;
 
 using System.Reflection;
 using System.Diagnostics;
+using System.Threading;
 
+using System;
 using System.IO;
-
+using System.Reflection;
 
 public class GameManager : MonoBehaviour {
 
+	//MoonSharpVsCodeDebugServer server;
 
 	public void Start()
 	{
@@ -22,49 +25,19 @@ public class GameManager : MonoBehaviour {
 	public void OnClickInit()
 	{
 		UnityEngine.Debug.Log("1");
+
+		LuaFileManager.Instance.Init();
 	}
 
 	public void OnClickMoveTest()
 	{
 		UnityEngine.Debug.Log("2");
 
-        //var go = GameObject.Find("Image-LuaTest");
-        //go.transform.position = new Vector3(-1, 0, 0);
-
-
-
-		//LuaFileInfo info = LuaFileManager.Instance.GetInfo("luascripts", "LuaTest");
-
-
-
-		//MoonSharpVsCodeDebugServer server = new MoonSharpVsCodeDebugServer();
-		//server.Start();
-		//server.AttachToScript(script, "DebugScript");
-		///server.AttachToScript(MoonSharpScript.Instance.script, "DebugScript");
-
-
-
-		//StartCoroutine(AwaitDebuggerAttach(server));
-		// wait for debugger to attach
-		// bool attached = AwaitDebuggerAttach(server);
-		// if (!attached) 
-		// {
-		// 	UnityEngine.Debug.Log("VS Code debugger did not attach. Running the script.");
-		// }
-
-		
-		
-		
-		//LuaFileInfo info = LuaFileManager.Instance.GetInfo("luascripts", "LuaTest");
-		//DynValue function = LuaFileManager.Instance.script.Globals.Get("LuaTest").Table.Get("OnClickDoLocalMove");
-		//LuaFileManager.Instance.script.Call(function, info.classInst);
-        
-
-
 		LuaFileInfo info = LuaFileManager.Instance.SingleGetInfo("test", "LuaTest2");
-        DynValue function = LuaFileManager.Instance.script.Globals.Get("LuaTest").Table.Get("OnClickDoLocalMove");
+        DynValue function = LuaFileManager.Instance.script.Globals.Get("LuaTest2").Table.Get("OnClickDoLocalMove");
         LuaFileManager.Instance.script.Call(function, info.classInst);
     }
+
 
     LuaFileInfo info;
 	void Update ()
@@ -78,7 +51,7 @@ public class GameManager : MonoBehaviour {
 			string content = reader.ReadToEnd();
 			print(LuaFileManager.Instance.script.DoFile(path));
 			*/
-            LuaFileManager.Instance.Init();
+            
 
             LuaFileInfo info = LuaFileManager.Instance.SingleGetInfo("test", "LuaTest2");
             DynValue function = LuaFileManager.Instance.script.Globals.Get("LuaTest").Table.Get("OnClickDoLocalMove");
@@ -86,7 +59,34 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
-    /*
+    private static bool AwaitDebuggerAttach(MoonSharpVsCodeDebugServer server)
+      {
+         // as soon as a client has attached, 'm_Client__' field of 'm_Current' isn't null anymore
+         // 
+         // we wait for ~60 seconds for a client to attach
+
+         BindingFlags bindFlags = BindingFlags.Instance | BindingFlags.NonPublic;
+         FieldInfo field = server.GetType().GetField("m_Current", bindFlags);
+         object current = field.GetValue(server);
+
+         FieldInfo property = current.GetType().GetField("m_Client__", bindFlags);
+
+         Stopwatch stopwatch = new Stopwatch();
+         stopwatch.Start();
+         //Console.WriteLine("Waiting for VS Code debugger to attach");
+		 UnityEngine.Debug.Log("Waiting for VS Code debugger to attach");
+         while (property.GetValue(current) == null)
+         {
+            Thread.Sleep(500);
+            if (stopwatch.Elapsed.TotalSeconds > 60) return false;
+         }
+         stopwatch.Stop();
+         //Console.WriteLine("VS Code debugger attached");
+		 UnityEngine.Debug.Log("VS Code debugger attached");
+         return true;
+      }
+
+	/*
 	private IEnumerator AwaitDebuggerAttach(this MoonSharpVsCodeDebugServer server)
 	{
 		// as soon as a client has attached, 'm_Client__' field of 'm_Current' isn't null anymore
@@ -112,5 +112,6 @@ public class GameManager : MonoBehaviour {
 		UnityEngine.Debug.Log("VS Code debugger attached");
 		yield return null;
 	}
-    */
+	*/
+    
 }

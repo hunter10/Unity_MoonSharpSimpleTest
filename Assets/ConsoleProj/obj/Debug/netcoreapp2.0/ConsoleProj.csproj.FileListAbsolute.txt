@@ -1,0 +1,13 @@
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\bin\Debug\netcoreapp2.0\ConsoleProj.deps.json
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\bin\Debug\netcoreapp2.0\ConsoleProj.runtimeconfig.json
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\bin\Debug\netcoreapp2.0\ConsoleProj.runtimeconfig.dev.json
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\bin\Debug\netcoreapp2.0\ConsoleProj.dll
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\bin\Debug\netcoreapp2.0\ConsoleProj.pdb
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\obj\Debug\netcoreapp2.0\ConsoleProj.csproj.CoreCompileInputs.cache
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\obj\Debug\netcoreapp2.0\ConsoleProj.AssemblyInfoInputs.cache
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\obj\Debug\netcoreapp2.0\ConsoleProj.AssemblyInfo.cs
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\obj\Debug\netcoreapp2.0\ConsoleProj.dll
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\obj\Debug\netcoreapp2.0\ConsoleProj.pdb
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\bin\Debug\netcoreapp2.0\UnityEngine.dll
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\bin\Debug\netcoreapp2.0\UnityEngine.xml
+D:\Work_Test\Unity_MoonSharpTest2\Assets\ConsoleProj\obj\Debug\netcoreapp2.0\ConsoleProj.csproj.CopyComplete

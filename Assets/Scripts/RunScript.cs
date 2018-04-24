@@ -15,6 +15,7 @@ public class RunScript : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		/*
 		UserData.RegisterAssembly();
 
 		script = new Script();
@@ -25,6 +26,8 @@ public class RunScript : MonoBehaviour {
 		
 		//For debugging purposes on my end.
 		server.AttachToScript(script, "SCRIPT_NAME_HERE_LOL");
+		*/
+
 
 		//This here is the function we need to set the type to be able to instantiate. I know, it's global, but it lets us use
 		//the methods and UnityEngine functions with ease from Lua.

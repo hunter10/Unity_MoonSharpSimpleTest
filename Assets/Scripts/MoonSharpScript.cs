@@ -28,12 +28,14 @@ public class MoonSharpScript : MonoSingleton<MoonSharpScript>
 		UserData.RegisterType<UnityEngine.GameObject>();
         UserData.RegisterType<UnityEngine.Transform>();
         UserData.RegisterType<UnityEngine.Vector3>();
+		UserData.RegisterType<UnityEngine.RectTransform>();
 
 		script.Globals["UnityEngine"] = DynValue.NewTable(script);
 		
 		script.Globals["UnityEngine", "GameObject"] = UserData.CreateStatic(typeof(GameObject));
         script.Globals["UnityEngine", "Transform"] = UserData.CreateStatic(typeof(Transform));
         script.Globals["UnityEngine", "Vector3"] = UserData.CreateStatic(typeof(UnityEngine.Vector3));
+		script.Globals["UnityEngine", "RectTransform"] = UserData.CreateStatic(typeof(UnityEngine.RectTransform));
     }
 
 	void RegisterConverter2Script()

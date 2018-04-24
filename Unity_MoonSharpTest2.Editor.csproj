@@ -156,6 +156,7 @@
     <Compile Include="Assets\AssetBundleManager\Editor\LaunchAssetBundleServer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\ConsoleProj\obj\Debug\netcoreapp2.0\ConsoleProj.csproj.FileListAbsolute.txt" />
     <None Include="Assets\LuaScripts\LuaTest.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -53,13 +53,17 @@
      <Compile Include="Assets\AssetBundleSample\Scripts\LoadScenes.cs" />
      <Compile Include="Assets\AssetBundleSample\Scripts\LoadTanks.cs" />
      <Compile Include="Assets\AssetBundleSample\Scripts\LoadVariants.cs" />
+     <Compile Include="Assets\ConsoleProj\Program.cs" />
+     <Compile Include="Assets\ConsoleProj\obj\Debug\netcoreapp2.0\ConsoleProj.AssemblyInfo.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\IventoryItemList.cs" />
      <Compile Include="Assets\Scripts\LuaFileManager.cs" />
      <Compile Include="Assets\Scripts\MonoSingleton.cs" />
      <Compile Include="Assets\Scripts\MoonSharpScript.cs" />
      <Compile Include="Assets\Scripts\RunScript.cs" />
+     <None Include="Assets\ConsoleProj\bin\Debug\netcoreapp2.0\UnityEngine.xml" />
      <None Include="Assets\LuaScripts\LuaTest.txt" />
+     <None Include="Assets\ConsoleProj\obj\Debug\netcoreapp2.0\ConsoleProj.csproj.FileListAbsolute.txt" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>D:/Work_Test/Unity_MoonSharpTest2/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
